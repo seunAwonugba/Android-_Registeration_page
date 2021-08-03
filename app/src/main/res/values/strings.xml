@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">registration_assignment</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="fullname">Fullname</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="signup">Sign Up</string>
+    <string name="users_data">My Profile</string>
+    <string name="gender">Gender</string>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "57741842953",
+    "project_id": "registeration-assignment",
+    "storage_bucket": "registeration-assignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57741842953:android:ea625b76e9600ac14576d8",
+        "android_client_info": {
+          "package_name": "com.raywenderlich.timefighter.registeration_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57741842953-2kn7mf45met2mt2hphiqgv7so1rpvd6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVm4IPXTsz3Gne-ezX7kr7eF7v4T3lCl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57741842953-2kn7mf45met2mt2hphiqgv7so1rpvd6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
