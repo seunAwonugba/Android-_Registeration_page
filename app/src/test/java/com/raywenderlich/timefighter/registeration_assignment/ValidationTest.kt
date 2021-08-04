@@ -9,7 +9,7 @@ import org.junit.Test
 
 class ValidationTest{
     /**
-     * NOTE we dont need to get the instance of the validation class because the class is an object
+     * NOTE we don't need to get the instance of the validation class because the class is an object
      * class and by default its and object and a class at the same time
      */
 
@@ -23,7 +23,7 @@ class ValidationTest{
 
     @Test
     fun validateEmailContainsTest(){
-        assertThat(Validation.validateEmailContains( "@")).isTrue()
+        assertThat(Validation.validateEmailContains( "seunawonugbagmailcom")).isTrue()
     }
 
     @Test
@@ -34,6 +34,11 @@ class ValidationTest{
     @Test
     fun validateNumberEmptyTest(){
         assertThat(Validation.validateNumberEmpty("")).isTrue()
+    }
+
+    @Test
+    fun validatePhoneNumberDoesNotStartsWithTest(){
+        assertThat(Validation.validatePhoneNumberDoesNotStartWith("0808037521")).isFalse()
     }
 
     /**

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
          * Create an array to hold dropdown value options, and also create an adapter for the dropdown
          * also
          */
-        val genderOptions = arrayOf("Gender","Female", "Male","Others")
+        val genderOptions = arrayOf(" ","Female", "Male","Others")
         val arrayAdapter = ArrayAdapter(this, R.layout.gender_options, genderOptions)
         instanceOfDropDown.setText(arrayAdapter.getItem(0).toString(), false)
         instanceOfDropDown.setAdapter(arrayAdapter)
@@ -58,8 +58,15 @@ class MainActivity : AppCompatActivity() {
             inputEmail = instanceOfEmail.text.toString().trim()
             inputNumber = instanceOfPhoneNumber.text.toString().trim()
             selectGender = instanceOfDropDown.text.toString().trim()
-
-            if (Validation.validateNameEmpty(inputName)){
+            /**
+             * Where Validation.validateSample(sampleVariable) == true or false, for cleaner code
+             * thats why its just Validation.validateSample(sampleVariable) or
+             * !Validation.validateSample(sampleVariable)
+             */
+            if(Validation.validateNamePattern(inputName) == false){
+                instanceOfFullName.error = "Your name must not contain special characters"
+            }
+            else if (Validation.validateNameEmpty(inputName)){
                 instanceOfFullName.error = "Kindly input your name"
             }
             else if (Validation.validateEmailEmpty(inputEmail)){
@@ -67,6 +74,9 @@ class MainActivity : AppCompatActivity() {
             }
             else if(Validation.validateEmailContains(inputEmail)){
                 instanceOfEmail.error = "Invalid email address"
+            }
+            else if (!Validation.validatePhoneNumberDoesNotStartWith(inputNumber)){
+                instanceOfPhoneNumber.error = "Kindly input a valid nigerian phone number"
             }
             else if (Validation.validateNumberEmpty(inputNumber)){
                 instanceOfPhoneNumber.error = "Kindly input your phone number"

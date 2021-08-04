@@ -8,6 +8,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
@@ -21,6 +22,7 @@ class MainActivityTest{
     private lateinit var inputEmailTest: String
     private lateinit var inputNumberTest: String
     private lateinit var selectGenderTest: String
+
 
     @get:Rule
     var activityRule: ActivityScenarioRule<MainActivity>

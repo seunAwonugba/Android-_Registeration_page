@@ -6,6 +6,12 @@ package com.raywenderlich.timefighter.registeration_assignment
  * and there by making use of the functions created in it
  */
 object Validation {
+    fun validateNamePattern(inputName: String):Boolean{
+        if (inputName.matches("^[a-zA-Z]{4,}(?: [a-zA-Z]+){0,2}\$".toRegex())){
+            return true
+        }
+        return false
+    }
     fun validateNameEmpty(inputName:String):Boolean{
         if(inputName.isEmpty()){
             return true
@@ -29,6 +35,15 @@ object Validation {
 
     fun validateNumberEmpty(inputNumber:String):Boolean{
         if(inputNumber.isEmpty()){
+            return true
+        }
+        return false
+    }
+
+    fun validatePhoneNumberDoesNotStartWith(inputNumber: String):Boolean{
+        if (inputNumber.startsWith("70") || inputNumber.startsWith("80")
+            || inputNumber.startsWith("81") || inputNumber.startsWith("90")
+            || inputNumber.startsWith("91")){
             return true
         }
         return false
