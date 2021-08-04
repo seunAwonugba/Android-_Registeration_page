@@ -1,10 +1,14 @@
 package com.raywenderlich.timefighter.registeration_assignment
 
+import androidx.test.espresso.Espresso.closeSoftKeyboard
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -52,10 +56,10 @@ class MainActivityTest{
             typeText(inputNumberTest),
             ViewActions.closeSoftKeyboard()
         )
-        onView(withId(R.id.genderId)).perform(
-            typeText(selectGenderTest),
-            ViewActions.closeSoftKeyboard()
-        )
+        onView(withId(R.id.genderId)).perform(click()).perform(ViewActions.closeSoftKeyboard())
+        onView(withText(selectGenderTest)).inRoot(RootMatchers.isPlatformPopup()).perform(click())
+
+
         onView(withId(R.id.buttonId)).perform(click())
         onView(withId(R.id.passedNameId))
         onView(withId(R.id.passedEmailId))

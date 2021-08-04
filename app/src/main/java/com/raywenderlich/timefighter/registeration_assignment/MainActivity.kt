@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
          * Create an array to hold dropdown value options, and also create an adapter for the dropdown
          * also
          */
-        val genderOptions = arrayOf(" ","Female", "Male","Others")
+        val genderOptions = arrayOf("Gender","Female", "Male","Others")
         val arrayAdapter = ArrayAdapter(this, R.layout.gender_options, genderOptions)
         instanceOfDropDown.setText(arrayAdapter.getItem(0).toString(), false)
         instanceOfDropDown.setAdapter(arrayAdapter)
